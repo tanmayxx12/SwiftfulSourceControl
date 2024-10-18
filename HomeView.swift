@@ -8,22 +8,58 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var selectedTab: Int = 0
+    
     var body: some View {
-        VStack {
-            Text("This is the first text")
-                .font(.headline)
-                .foregroundStyle(.white)
-                .padding()
-                .background(.red)
-                .cornerRadius(10)
+        TabView(selection: $selectedTab) {
+            Text("Home Tab")
+                .tabItem {
+                    VStack{
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                    }
+                }
+                .tag(0)
             
-            Text("This is the second text")
-                .font(.headline)
-                .foregroundStyle(.white)
-                .padding()
-                .background(.blue)
-                .cornerRadius(10)
+            Text("Search Tab")
+                .tabItem{
+                    VStack{
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+                }
+                .tag(1)
+            
+            Text("Post Something Tab")
+                .tabItem{
+                    VStack{
+                        Image(systemName: "plus.app")
+                        Text("Post")
+                    }
+                }
+                .tag(2)
+            
+            Text("Explore Tab")
+                .tabItem {
+                    VStack{
+                        Image(systemName: "play.square.stack.fill")
+                        Text("Explore")
+                    }
+                }
+            
+            
+            Text("Profile Tab")
+                .tabItem {
+                    VStack{
+                        Image(systemName: "person.fill")
+                        Text("Profile")
+                    }
+                }
+                .tag(4)
         }
+        
+        
+        
     }
 }
 
