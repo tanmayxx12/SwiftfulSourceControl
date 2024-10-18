@@ -11,17 +11,18 @@
  NEW FEATURE:
  [Feature] Description of the feature
  
- BUG IN PRODUCTION:
- [Patch] Description of the patch
- 
  BUG NOT IN PRODUCTION:
  [Bug] Description of the bug
+ 
+ RELEASE:
+ [Release] Description of release
+ 
+ BUG IN PRODUCTION:
+ [Patch] Description of the patch
  
  MUNDANE TASKS:
  [Clean] Description of the changes
  
- RELEASE:
- [Release] Description of release
  */
 
 import SwiftUI
