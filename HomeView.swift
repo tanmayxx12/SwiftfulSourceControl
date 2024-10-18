@@ -9,7 +9,21 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("Screen 2")
+        VStack {
+            Text("This is the first text")
+                .font(.headline)
+                .foregroundStyle(.white)
+                .padding()
+                .background(.red)
+                .cornerRadius(10)
+            
+            Text("This is the second text")
+                .font(.headline)
+                .foregroundStyle(.white)
+                .padding()
+                .background(.blue)
+                .cornerRadius(10)
+        }
     }
 }
 
