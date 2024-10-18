@@ -57,7 +57,7 @@ struct HomeView: View {
                 }
                 .tag(4)
         }
-        
+        .tint(.red)
         
         
     }
