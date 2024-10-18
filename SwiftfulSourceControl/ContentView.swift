@@ -17,12 +17,6 @@ struct ContentView: View {
             Text("Swiftful Thinking")
                 .padding(.bottom)
             
-            Button("Click Me"){}
-                .font(.headline)
-                .buttonStyle(.borderedProminent)
-                .tint(.blue)
-                .shadow(radius: 10, y: 10)
-            
         }
         .padding()
     }
