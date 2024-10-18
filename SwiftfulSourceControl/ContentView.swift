@@ -5,6 +5,10 @@
 //  Created by Tanmay . on 18/10/24.
 //
 
+// Clone: Copying the repo locally
+// Commit: Save ("Checkpoint") on our current branch
+// Staging: Prepare changes for a commit
+// Stash: Save changes for later
 
 // COMMIT MESSAGES:
 /*
