@@ -49,6 +49,20 @@ struct ContentView: View {
                 .buttonStyle(.borderedProminent)
                 .shadow(radius: 10, y: 10)
                 .tint(.gray)
+                .padding(.bottom)
+            
+            Button{
+                withAnimation(.spring()){
+                    fillForRectangle.toggle()
+                }
+            } label: {
+                Rectangle()
+                    .fill(fillForRectangle ? .red : .blue)
+                    .frame(width: 200, height: 200)
+                    .cornerRadius(10)
+            }
+            .shadow(radius: 10, y: 10)
+           
             
         }
         .padding()
