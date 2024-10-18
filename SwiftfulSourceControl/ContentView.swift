@@ -9,6 +9,8 @@
 // Commit: Save ("Checkpoint") on our current branch
 // Staging: Prepare changes for a commit
 // Stash: Save changes for later
+// Push: Send local commits to remote repo
+// Pull: Fetch remote commits to local repo
 
 // COMMIT MESSAGES:
 /*
