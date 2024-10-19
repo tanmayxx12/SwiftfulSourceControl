@@ -127,14 +127,15 @@ struct HomeTab: View {
                     .fill(.gray)
                     .frame(width: .infinity, height: 400)
                     .padding(.horizontal, 8)
+                    .overlay{
+                        Image("TanmaysPost")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxWidth: .infinity, maxHeight: 400)
+                            .clipped()
+                    }
+                    .padding(.horizontal, 4 )
             }
-            
-//            ScrollView(.vertical, showsIndicators: false){
-//               
-//                    
-//            }
-            
-            
             
             Spacer()
                 .navigationTitle("HomeTab")
