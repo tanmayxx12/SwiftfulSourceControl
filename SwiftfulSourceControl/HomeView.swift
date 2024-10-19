@@ -80,6 +80,7 @@ struct HomeTab: View {
                                 } label: {
                                     Circle()
                                        .frame(width: 100, height: 100)
+                                       .foregroundStyle(.black)
                                        .overlay {
                                            Circle()
                                                .fill(.white)
@@ -87,6 +88,7 @@ struct HomeTab: View {
                                                .overlay {
                                                    Text("\(item)")
                                                        .font(.headline)
+                                                       .foregroundStyle(.black)
                                                }
                                        }
                                 }
@@ -101,24 +103,29 @@ struct HomeTab: View {
                             Text("tanmayxx's Profile")
                         } label: {
                             Circle()
+                                .foregroundStyle(.black)
                                 .frame(width: 40, height: 40)
-                                .padding(.leading)
+                                .padding(.horizontal, 4)
                             Text("tanmayxx_")
                                 .font(.headline)
+                                .foregroundStyle(.black)
                         }
-                       
                         Spacer()
-                        Menu {
+                        
+                        Menu{
                             Button{} label: {
                                 Text("Share")
+                                    .font(.headline)
                                     .fontWeight(.bold)
                                 Image(systemName: "paperplane")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
                             }
                         } label: {
                             Image(systemName: "ellipsis")
+                                .foregroundStyle(.black)
                                 .font(.headline)
-                                .padding(.trailing)
-
+                                .padding(.trailing, 5)
                         }
                     }
                 }
@@ -134,7 +141,7 @@ struct HomeTab: View {
                             .frame(maxWidth: .infinity, maxHeight: 400)
                             .clipped()
                     }
-                    .padding(.horizontal, 4 )
+                    .padding(.horizontal, 4)
             }
             
             Spacer()
@@ -145,6 +152,7 @@ struct HomeTab: View {
                             Text("See follow requests and notifications here.")
                         } label: {
                             Image(systemName: "heart.fill")
+                                .foregroundStyle(.red)
                         }
                     }
                     ToolbarItem(placement: .topBarTrailing) {
@@ -152,11 +160,11 @@ struct HomeTab: View {
                             Text("Your Direct Messages appear here.")
                         } label: {
                             Image(systemName: "message.fill")
+                                .foregroundStyle(.black)
                         }
                     }
                     
                 }
         }
-        .tint(.black)
     }
 }
