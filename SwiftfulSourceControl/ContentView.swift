@@ -51,7 +51,7 @@ struct ContentView: View {
                 .buttonStyle(.borderedProminent)
                 .shadow(radius: 10, y: 10)
             
-            Button("Subscribe Now!") {}
+            Button("Subscribe") {}
                 .font(.headline)
                 .buttonStyle(.borderedProminent)
                 .shadow(radius: 10, y: 10)
