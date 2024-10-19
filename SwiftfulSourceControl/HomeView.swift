@@ -97,11 +97,16 @@ struct HomeTab: View {
                     }
                 VStack{
                     HStack{
-                        Circle()
-                            .frame(width: 40, height: 40)
-                            .padding(.leading)
-                        Text("tanmayxx_")
-                            .font(.headline)
+                        NavigationLink{
+                            Text("tanmayxx's Profile")
+                        } label: {
+                            Circle()
+                                .frame(width: 40, height: 40)
+                                .padding(.leading)
+                            Text("tanmayxx_")
+                                .font(.headline)
+                        }
+                       
                         Spacer()
                         Menu {
                             Button{} label: {
