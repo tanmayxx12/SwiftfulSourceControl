@@ -23,7 +23,7 @@
  RELEASE:
  [Release] Description of release
  
- BUG IN PRODUCTION:
+ BUG IN PRODUCTION: 
  [Patch] Description of the patch
  
  MUNDANE TASKS:
@@ -50,7 +50,7 @@ struct ContentView: View {
                 .buttonStyle(.borderedProminent)
                 .shadow(radius: 10, y: 10)
             
-            Button("Subscribe Now") {}
+            Button("Subscribe") {}
                 .font(.headline)
                 .buttonStyle(.borderedProminent)
                 .shadow(radius: 10, y: 10)
