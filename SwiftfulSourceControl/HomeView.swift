@@ -12,7 +12,7 @@ struct HomeView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            Text("Home Tab")
+            HomeTab()
                 .tabItem {
                     VStack{
                         Image(systemName: "house.fill")
@@ -64,35 +64,73 @@ struct HomeView: View {
 }
 
 #Preview {
-//    HomeView()
-    HomeTab()
+    HomeView()
+//    HomeTab()
 }
  
 struct HomeTab: View {
     var body: some View {
         NavigationStack{
-                ScrollView(.horizontal){
-                    HStack{
-                        ForEach(0..<20) { item in
-                            NavigationLink{
-                                Text("You tapped on \(item)'s story")
-                            } label: {
-                                Circle()
-                                   .frame(width: 100, height: 100)
-                                   .overlay {
-                                       Circle()
-                                           .fill(.white)
-                                           .frame(width: 95, height: 95)
-                                           .overlay {
-                                               Text("\(item)")
-                                                   .font(.headline)
-                                           }
-                                   }
+            ScrollView(.vertical, showsIndicators: false){
+                ScrollView(.horizontal, showsIndicators: false){
+                        HStack{
+                            ForEach(0..<20) { item in
+                                NavigationLink{
+                                    Text("You tapped on \(item)'s story")
+                                } label: {
+                                    Circle()
+                                       .frame(width: 100, height: 100)
+                                       .overlay {
+                                           Circle()
+                                               .fill(.white)
+                                               .frame(width: 95, height: 95)
+                                               .overlay {
+                                                   Text("\(item)")
+                                                       .font(.headline)
+                                               }
+                                       }
+                                }
+                                 
                             }
-                             
+                        }
+                        .padding(.leading)
+                    }
+                VStack{
+                    HStack{
+                        Circle()
+                            .frame(width: 40, height: 40)
+                            .padding(.leading)
+                        Text("tanmayxx_")
+                            .font(.headline)
+                        Spacer()
+                        Menu {
+                            Button{} label: {
+                                Text("Share")
+                                    .fontWeight(.bold)
+                                Image(systemName: "paperplane")
+                            }
+                        } label: {
+                            Image(systemName: "ellipsis")
+                                .font(.headline)
+                                .padding(.trailing)
+
                         }
                     }
                 }
+               
+                Rectangle()
+                    .fill(.gray)
+                    .frame(width: .infinity, height: 400)
+                    .padding(.horizontal, 8)
+            }
+            
+//            ScrollView(.vertical, showsIndicators: false){
+//               
+//                    
+//            }
+            
+            
+            
             Spacer()
                 .navigationTitle("HomeTab")
                 .toolbar {
