@@ -9,10 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var selectedTab: Int = 0
+    @State private var isLiked: Bool = false
+    @State private var showShareConfirmationDialogue: Bool = false
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            HomeTab()
+            HomeTab(isLiked: $isLiked, showShareConfirmationDialogue: $showShareConfirmationDialogue)
                 .tabItem {
                     VStack{
                         Image(systemName: "house.fill")
@@ -69,8 +71,11 @@ struct HomeView: View {
 }
  
 struct HomeTab: View {
+    @Binding var isLiked: Bool
+    @Binding var showShareConfirmationDialogue: Bool 
+    
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             ScrollView(.vertical, showsIndicators: false){
                 ScrollView(.horizontal, showsIndicators: false){
                         HStack{
@@ -142,6 +147,58 @@ struct HomeTab: View {
                             .clipped()
                     }
                     .padding(.horizontal, 4)
+                
+                HStack(spacing: 10){
+                    
+                    // Heart Button:
+                    Button{
+                        // execute action for when the button is tapped:
+                        isLiked.toggle()
+                    } label: {
+                        Image(systemName: "heart.fill")
+                            .font(.title2)
+                            .foregroundStyle(isLiked ? .red : .white)
+                            .overlay{
+                                Image(systemName: "heart")
+                                    .font(.title2)
+                                    .foregroundStyle(isLiked ? .red : .black)
+                            }
+                    }
+                    .padding(.leading, 4)
+                    
+                    // Comment Button:
+                    Button {
+                        // execute action for when the comment button is tapped:
+                    } label: {
+                        Image(systemName: "message")
+                            .font(.title2)
+                            .foregroundStyle(.black)
+                    }
+                    
+                    // Share button:
+                    Button{
+                        // execute action for when the share button is tapped:
+                        showShareConfirmationDialogue.toggle()
+                    } label: {
+                        Image(systemName: "paperplane")
+                            .font(.title2)
+                            .foregroundStyle(.black)
+                    }
+                    .confirmationDialog("Share",
+                                        isPresented: $showShareConfirmationDialogue) {
+                        Button("Share with @disha.bisht"){}
+                        Button("Share with @tanmayxx"){}
+                    }
+                    Spacer()
+                }
+                
+                HStack{
+                    Text("tanmayxx")
+                        .font(.headline.bold())
+                    Spacer()
+                }
+                .padding(.leading, 4)
+
             }
             
             Spacer()
