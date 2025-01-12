@@ -38,7 +38,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "heart.fill")
+            Image(systemName: "bolt.fill")
                 .font(.largeTitle)
                 .imageScale(.large)
                 .foregroundStyle(.tint)
